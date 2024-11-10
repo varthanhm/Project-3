@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 1</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            color: #333;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1rem;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding-top: 50px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        header img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #222;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #777;
+            margin-bottom: 30px;
+        }
+
+        .introduction {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+            margin-bottom: 50px;
+        }
+
+        .section-1, .section-2, .third-section {
+            margin-bottom: 50px;
+        }
+
+        .section-1 h2, .section-2 h2, .third-section h2 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .section-1 p, .section-2 p, .third-section p {
+            font-size: 1.1rem;
+            color: #444;
+            margin-bottom: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-2 pre, .third-section pre {
+            background-color: #fafafa;
+            border-left: 5px solid #333;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 1rem;
+            color: #888;
+            margin-top: 50px;
+        }
+        .textoverlay {
+            position: relative;
+            width: 100%;
+        }
+        .centered {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .textinsideimage {
+            position: absolute;
+            top:65%;
+            left:50%;
+            transform: translate(-30%, -50%);
+            width: 100%;
+        }
+        h1 {
+            color: white;
+            font-size: 2.0em;
+            font-weight: 300;
+        }
+        .textinsideimage2 {
+            position: absolute;
+            top: 78%;
+            left: 50%;
+            transform: translate(-12%, -50%);
+            width: 100%
+        }
+    </style>
+</head>
+
+<body>
+ 
+        <!-- insert banner image and logo as seen in the sample website, the links for the images are provided in the question -->
+         <div class="textoverlay">
+            <img id="banner" width="100%" height="500px" src="./assets/background.webp" alt="banner">
+            <div class="centered">
+            
+                <img id="logo" width="100px" height="100px"  src="./assets/logo.jpg" alt="Logo">
+            </div>
+            <div class="textinsideimage">
+                <h1>Understanding the fundamentals of state in Javascript</h1>
+            </div>
+            <div class="textinsideimage2">
+                <h1>Harsha Varthanan M</h1>
+            </div>
+
+         </div>
+         <main>
+        <div class="introduction">
+            <p>Chapter 3 from the book; Vumbula React — Co-authored by
+                John Kagga
+            </p>
+
+            <p>
+                In earlier chapters, we've dealt mostly with functional React components that do not require state
+                management. This chapter's main focus is on state, its management and components that utilise it in
+                React.
+            </p>
+        </div>
+
+        <div class="section-1">
+            <h2>
+                What is State?
+            </h2>
+
+            <p>
+                State is a JavaScript object that stores a component's dynamic data and determines the component's
+                behaviour. Because state is dynamic, it enables a component to keep track of changing information in
+                between renders and for it to be dynamic and interactive.
+            </p>
+
+            <p>
+                State is similar to props but unlike props, it is private to a component and is controlled solely by the
+                said component. In the examples from previous chapters, the behaviour of components has primarily
+                depended on the props that are passed down to them. In those cases, the components that receive the
+                props have no control over them because props are read-only.
+            </p>
+
+           
+
+        </div>
+
+        <div class="section-2">
+            <h2>
+                Adding State to a Class Component
+            </h2>
+
+            <pre>
+                class Greeting extends React.Component {
+                    render(){
+                      return &lt;h1&gt;I’m a component in need of some state! &lt;/h1&gt;;
+                    }
+                  }
+            </pre>
+
+            <p>
+                Adding state to the Greeting component above involves defining within the class component, a constructor
+                function that assigns the initial state using this.state.
+            </p>
+
+            <pre>
+                class Greeting extends React.Component {
+                    constructor(props) {
+                     super(props);
+                       // Define your state object here
+                       this.state = {
+                         name: ‘Jane Doe’
+                       }
+                     }
+                     render(){
+                       return &lt;h1&gt;Hello { this.state.name }&lt;/h1&gt;;
+                     }
+                  }
+            </pre>
+        </div>
+
+        <div class="third-section">
+            <h2>
+                Investigating State using React Dev Tools
+            </h2>
+
+            <p>
+                The devtools are available for download on both Mozilla Firefox Add-ons and the Chrome Web Store. Follow
+                the appropriate link to install the devtools depending on which browser you have installed on your
+                computer.
+            </p>
+
+            <p>
+                Throughout the rest of this book, Chrome will be used as the browser of choice. In order to confirm
+                successful installation of the devtools on Chrome, open the developer tools window using Cmd+Opt+I on a
+                Mac or Ctrl+Alt+I on a windows PC. You should now see a React tab.
+            </p>
+        </div>
+    </body>
+</main>
+
+
+</body>
+
+</html>
